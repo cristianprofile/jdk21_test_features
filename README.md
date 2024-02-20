@@ -18,6 +18,9 @@
 
     Pattern matching with destructuring: You can now directly match records and sealed classes in switch expressions, extracting their fields for concise and readable code.
 
+  Now the compiler making sure that the switch expression covers all possible values ? so that you can avoid surprises at runtime. Plus, you don?t need to use a default branch ?just in case?, since once it compiles, you know that all the cases are covered. (Enums Or Sealed classes)
+    
+
 * **Sealed classes**: 
 
     While not directly tested in this code, sealed classes enable restricted inheritance hierarchies, ensuring type safety and code clarity.
