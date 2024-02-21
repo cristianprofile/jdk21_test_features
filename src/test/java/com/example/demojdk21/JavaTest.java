@@ -47,6 +47,19 @@ class JavaTest {
     assertThat( reversed.getFirst()).isEqualTo("Element3");
 
   }
+
+
+  // ***** Sealed classes and Enum examples **************
+  Integer getErrorValue(ErrorModel errorModel)
+  {
+    return switch (errorModel){
+      case BadRequest badRequest -> 5;
+      case Conflict conflict -> 4;
+      case Forbidden forbidden -> 5;
+      case NotFound notFound -> 5;
+      case Unauthorized unauthorized -> 6;
+    };
+  }
   
   Integer getShapeValue(Shape shape)
   {
@@ -63,6 +76,8 @@ class JavaTest {
     Integer shapeValue = getShapeValue(circle);
     assertThat(shapeValue).isEqualTo(1);
   }
+
+  // ***** Sealed classes examples **************
 
   @Test
   void destructRecordTest() {
