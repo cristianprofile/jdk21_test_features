@@ -47,11 +47,21 @@ class JavaTest {
     assertThat( reversed.getFirst()).isEqualTo("Element3");
 
   }
-
+  
+  Integer getShapeValue(Shape shape)
+  {
+    return switch (shape){
+      case Circle circle -> 1;
+      case Rectangle rectangle -> 4;
+    };
+  }
+  
   @Test
   void switchTest() {
-    assertThat(    Vehicle.BUS.process()).isEqualTo(180);
-
+    assertThat(Vehicle.BUS.process()).isEqualTo(180);
+    Circle circle = new Circle(12.0);
+    Integer shapeValue = getShapeValue(circle);
+    assertThat(shapeValue).isEqualTo(1);
   }
 
   @Test

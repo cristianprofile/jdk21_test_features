@@ -10,4 +10,9 @@ enum Vehicle {
       case TRAIN -> 90;
     };
   }
+
+
+
+  
 }
+
